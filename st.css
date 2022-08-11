@@ -202,20 +202,13 @@ form
     width: 100%;
     max-width: 250px;
 }
-.galitem img
-{
-    width: inherit;
-}
-.galitem h3
+
+.galitem h3,.galitem p,.galitem img
 {
     width: inherit;
     margin: 0;
 }
-.galitem p
-{
-    width: inherit;
-    margin: 0rem;
-}
+
 .gallery::after
 {
     content: "";
