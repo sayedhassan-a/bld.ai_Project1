@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script src="myScript.js"></script>
   </head>
 
   <body>
@@ -22,11 +23,16 @@
       <span class="navitem site"><strong>Udemy</strong></span>
       <span class="navitem cat">Categories</span>
       <!--Search Bar-->
-      <form class="navitem form">
+      <form class="navitem form" onsubmit="{upd()}">
         <button type="submit" class="sbutton">
           <i class="material-icons">search</i>
         </button>
-        <input type="text" class="bar" placeholder="Search for anything" />
+        <input
+          type="text"
+          class="bar"
+          placeholder="Search for anything"
+          id="search-item"
+        />
       </form>
 
       <span class="navitem bus">Udemy Business</span>

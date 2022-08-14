@@ -150,7 +150,8 @@ form {
   align-items: center;
   gap: 20px;
   width: 100%;
-  padding: 0px 10px 20px 0px;
+  padding: 0px auto 20px auto;
+  margin: auto;
 }
 .courses {
   border: 1px solid black;
@@ -177,7 +178,7 @@ form {
 
 .courses-display::after {
   content: "";
-  width: 250px;
+  width: 100%;
 }
 .rate {
   color: goldenrod;
