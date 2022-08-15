@@ -1,0 +1,67 @@
+{
+  "courses": {
+    "python": {
+      "intro": {
+        "title": "Expand your career opportunities with Python",
+        "parg": "Take one of Udemy’s range of Python courses and learn how to code using this incredibly useful language. Its simple syntax and readability makes Python perfect for Flask, Django, data science, and machine learning. You’ll learn how to build everything from games to sites to apps. Choose from a range of courses that will appeal to both beginners and advanced developers alike."
+      },
+      "content": [
+        {
+          "course": {
+            "img": "files/c1.png",
+            "heading": "Learn Python: The Complete Python Programming Course",
+            "author": "Avinash Jain, The Codex",
+            "rate": "4.4",
+            "watched": "2,923",
+            "final": "199.99",
+            "price": "679.99"
+          }
+        },
+        {
+          "course": {
+            "img": "files/c2.png",
+            "heading": "Learning Python for Data Analysis and Visualization",
+            "author": "Jose Portilla",
+            "rate": "4.4",
+            "watched": "17,986",
+            "final": "269.99",
+            "price": "1599.99"
+          }
+        },
+        {
+          "course": {
+            "img": "files/c3.png",
+            "heading": "Python for Beginners - Learn Programming from scratch",
+            "author": "Edwin Diaz, Coding Faculty Solutions",
+            "rate": "4.4",
+            "watched": "1,770",
+            "final": "199.99",
+            "price": "679.99"
+          }
+        },
+        {
+          "course": {
+            "img": "files/c4.png",
+            "heading": "Learn Python: Python for Beginners",
+            "author": "Abrar Hussain",
+            "rate": "4.3",
+            "watched": "2,768",
+            "final": "199.99",
+            "price": "319.99"
+          }
+        },
+        {
+          "course": {
+            "img": "files/c5.png",
+            "heading": "Python Beyond the Basics - Object-Oriented Programming",
+            "author": "Infinite Skills",
+            "rate": "4.4",
+            "watched": "2,929",
+            "final": "229.99",
+            "price": "519.99"
+          }
+        }
+      ]
+    }
+  }
+}
