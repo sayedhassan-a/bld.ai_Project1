@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="st.css" />
     <link
       rel="stylesheet"
@@ -14,55 +20,56 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <!-- CSS only -->
+
     <script src="myScript.js"></script>
   </head>
 
   <body>
-    <script>
-      view();
-    </script>
-    <nav class="nav">
+    <nav class="pers-nav">
       <span class="fa fa-bars" id="bar"></span>
-      <span class="navitem site"><strong>Udemy</strong></span>
-      <span class="navitem cat">Categories</span>
+      <span class="pers-navitem pers-site"><strong>Udemy</strong></span>
+      <span class="pers-navitem pers-cat">Categories</span>
       <!--Search Bar-->
-      <form class="navitem form" onsubmit="{upd()}">
-        <button type="submit" class="sbutton">
+      <form class="pers-navitem pers-form" onsubmit="{upd()}">
+        <button type="submit" class="pers-sbutton">
           <i class="material-icons">search</i>
         </button>
         <input
           type="text"
-          class="bar"
+          class="pers-bar"
           placeholder="Search for anything"
           id="search-item"
         />
       </form>
 
-      <span class="navitem bus">Udemy Business</span>
-      <span class="navitem teach">Teach on Udemy</span>
+      <span class="pers-navitem pers-bus">Udemy Business</span>
+      <span class="pers-navitem pers-teach">Teach on Udemy</span>
       <!--cart-->
-      <span class="navitem cart">
+      <span class="pers-navitem pers-cart">
         <i class="material-icons">shopping_cart</i>
       </span>
-      <div class="last">
-        <span class="navitem log">Log in</span>
-        <span class="navitem sign">Sign up</span>
-        <span class="navitem lang"><i class="material-icons">language</i></span>
+      <div class="pers-last">
+        <span class="pers-navitem pers-log">Log in</span>
+        <span class="pers-navitem pers-sign">Sign up</span>
+        <span class="pers-navitem pers-lang"
+          ><i class="material-icons">language</i></span
+        >
       </div>
       <!--Lang-->
     </nav>
     <header>
-      <div class="header">
+      <div class="pers-header">
         <h1>New to Udemy? Lucky you.</h1>
         <p>
           Courses start at E£169.99. Get your new-student offer before it
           expires.
         </p>
       </div>
-      <div class="alarm">
+      <div class="pers-alarm">
         <img src="files/alarm.jpg" />
       </div>
-      <div class="header2">
+      <div class="pers-header2">
         <h1>New to Udemy? Lucky you.</h1>
         <p>
           Courses start at E£169.99. Get your new-student offer before it
@@ -71,18 +78,18 @@
       </div>
     </header>
     <main>
-      <section class="courses-section">
-        <div class="intro">
+      <section class="pers-courses-section">
+        <div class="pers-intro">
           <h1>A broad selection of courses</h1>
           <p>
             Choose from 185,000 online video courses with new additions
             published every month
           </p>
         </div>
-        <list class="courses-select">
+        <list class="pers-courses-select">
           <ul>
             <button
-              class="course-type"
+              class="pers-course-type"
               name="course type"
               id="python"
               onclick="getElementById('python').style.opacity = '100%'"
@@ -92,7 +99,7 @@
           </ul>
           <ul>
             <button
-              class="course-type"
+              class="pers-course-type"
               name="course type"
               id="excel"
               onclick="getElementById('excel').style.opacity = '100%'"
@@ -101,31 +108,57 @@
             </button>
           </ul>
           <ul>
-            <button class="course-type" name="course type">
+            <button class="pers-course-type" name="course type">
               Web Development
             </button>
           </ul>
           <ul>
-            <button class="course-type" name="course type">javaScript</button>
+            <button class="pers-course-type" name="course type">
+              javaScript
+            </button>
           </ul>
           <ul>
-            <button class="course-type" name="course type">Data Science</button>
+            <button class="pers-course-type" name="course type">
+              Data Science
+            </button>
           </ul>
           <ul>
-            <button class="course-type" name="course type">
+            <button class="pers-course-type" name="course type">
               AWS Certification
             </button>
           </ul>
           <ul>
-            <button class="course-type" name="course type">Drawing</button>
+            <button class="pers-course-type" name="course type">Drawing</button>
           </ul>
         </list>
-        <div class="courses">
-          <div class="courses-desc"></div>
-          <div class="courses-display"></div>
+        <div class="pers-courses">
+          <div class="pers-courses-desc"></div>
+          <div id="disp" class="pers-courses-display">
+
+          </div>
+            
         </div>
-      </section>
+        <section class="categories">
+          <div class="row">Top categories</div>
+          <div class="row">
+            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-design-v2.jpg" alt=""><figcaption>Desgin</figcaption></figure></div>
+            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-development-v2.jpg" alt=""><figcaption>Development</figcaption></figure></div>
+            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-marketing-v2.jpg" alt=""><figcaption>Marketing</figcaption></figure></div>
+            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-it-and-software-v2.jpg" alt=""><figcaption>IT and Software</figcaption></figure></div>
+            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-personal-development-v2.jpg" alt=""><figcaption>Personal Development</figcaption></figure></div>
+            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-business-v2.jpg" alt=""><figcaption>Business</figcaption></figure></div>
+            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-photography-v2.jpg" alt=""><figcaption>Photography</figcaption></figure></div>
+            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-music-v2.jpg" alt=""><figcaption>Music</figcaption></figure></div>
+          </div>
+        </section>
     </main>
     <footer></footer>
+    <script>view()</script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

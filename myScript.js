@@ -1,7 +1,7 @@
 const upd = function () {
   event.preventDefault();
   console.log(0);
-  const item = document.getElementsByClassName("course-item");
+  const item = document.getElementsByClassName("pers-course-item");
   let fnd = " " + document.getElementById("search-item").value.toLowerCase();
 
   for (let i = 0; i < 5; i++) {
@@ -16,22 +16,26 @@ const upd = function () {
 };
 const add = function (item, child) {
   let space = document.createTextNode(" ");
+  console.log("item");
+  console.log(item);
+  console.log("ch");
+  console.log(child);
   item.appendChild(child);
   item.appendChild(space);
 };
-const view = function () {
+const view = function (link) {
   fetch("http://localhost:3000/courses")
     .then((res) => res.json())
     .then((data) => {
-      const desc = document.getElementsByClassName("courses-desc")[0];
+      const desc = document.getElementsByClassName("pers-courses-desc")[0];
       let title = document.createElement("h2");
       let parg = document.createElement("p");
       title.innerHTML = data.python.intro.title;
       parg.innerHTML = data.python.intro.parg;
       add(desc, title);
       add(desc, parg);
-      const cur = document.getElementsByClassName("courses-display")[0];
-      console.log(cur);
+      const cur = document.getElementById("disp");
+      let ch = 0;
       for (let j of data.python.content) {
         let item = j.course;
         let art = document.createElement("article");
@@ -43,13 +47,13 @@ const view = function () {
         let price = document.createElement("p");
         let final = document.createElement("s");
 
-        art.className = "course-item";
-        img.className = "course";
-        heading.className = "heading";
-        author.className = "author";
-        rate.className = "rate rate-num";
-        watched.className = "watched";
-        price.className = "price";
+        art.className = "pers-course-item";
+        img.className = "pers-course";
+        heading.className = "pers-heading";
+        author.className = "pers-author";
+        rate.className = "pers-rate pers-rate-num";
+        watched.className = "pers-watched";
+        price.className = "pers-price";
 
         img.src = item.img;
         heading.innerHTML = item.heading;
@@ -68,9 +72,9 @@ const view = function () {
         for (let i = 0; i < 5; i++) {
           let s = document.createElement("span");
           if (x > 0.5) {
-            s.className = "fa fa-star rate";
+            s.className = "fa fa-star pers-rate";
           } else if (x > 0) {
-            s.className = "fa fa-star-half-empty rate";
+            s.className = "fa fa-star-half-empty pers-rate";
           } else {
             s.className = "fa fa-star";
           }
@@ -81,6 +85,8 @@ const view = function () {
         add(art, watched);
         add(art, price);
         console.log(art);
+        let car = document.createElement("div");
+        car.className = "";
         add(cur, art);
       }
     });
