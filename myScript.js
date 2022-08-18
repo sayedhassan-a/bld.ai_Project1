@@ -1,6 +1,5 @@
 const upd = function () {
   event.preventDefault();
-  console.log(0);
   const item = document.getElementsByClassName("pers-course-item");
   let fnd = " " + document.getElementById("search-item").value.toLowerCase();
 
@@ -16,28 +15,41 @@ const upd = function () {
 };
 const add = function (item, child) {
   let space = document.createTextNode(" ");
-  console.log("item");
-  console.log(item);
-  console.log("ch");
-  console.log(child);
+
   item.appendChild(child);
   item.appendChild(space);
 };
+let curButton = "python";
 const view = function (link) {
-  fetch("http://localhost:3000/courses")
+  document.getElementById(curButton).style.opacity = "0.6";
+  document.getElementById(link).style.opacity = "1";
+  curButton = link;
+  link = "http://localhost:3000/" + link;
+  fetch(link)
     .then((res) => res.json())
     .then((data) => {
-      const desc = document.getElementsByClassName("pers-courses-desc")[0];
+      let desc = document.getElementsByClassName("pers-courses-desc")[0];
+      let cur = document.getElementById("disp");
+      desc.remove();
+      cur.remove();
+      desc = document.createElement("div");
+      desc.className = "pers-courses-desc";
+      cur = document.createElement("div");
+      cur.className = "pers-courses-display";
+      cur.id = "disp";
+      const courses = document.getElementsByClassName("pers-courses")[0];
+      courses.appendChild(desc);
+      courses.appendChild(cur);
+
       let title = document.createElement("h2");
-      let parg = document.createElement("p");
-      title.innerHTML = data.python.intro.title;
-      parg.innerHTML = data.python.intro.parg;
+      let header = document.createElement("p");
+      title.innerHTML = data.title;
+      header.innerHTML = data.header;
       add(desc, title);
-      add(desc, parg);
-      const cur = document.getElementById("disp");
-      let ch = 0;
-      for (let j of data.python.content) {
-        let item = j.course;
+      add(desc, header);
+
+      for (let j of data.courses) {
+        let item = j;
         let art = document.createElement("article");
         let img = document.createElement("img");
         let heading = document.createElement("h3");
@@ -55,20 +67,20 @@ const view = function (link) {
         watched.className = "pers-watched";
         price.className = "pers-price";
 
-        img.src = item.img;
-        heading.innerHTML = item.heading;
-        author.innerHTML = item.author;
-        rate.innerHTML = item.rate;
-        watched.innerHTML = "(" + item.watched + ")";
+        img.src = item.image;
+        heading.innerHTML = item.headline;
+        author.innerHTML = item.instructors[0].name;
+        let x = parseFloat(item.rating);
+        x = x.toFixed(1);
+        let y = parseFloat(x).toFixed();
+        if (y == x) x = x.toFixed();
+        rate.innerHTML = x;
         price.innerHTML = "E£" + item.price + "  ";
-        final.innerHTML = "E£" + item.final;
 
-        add(price, final);
         add(art, img);
         add(art, heading);
         add(art, author);
         add(art, rate);
-        let x = parseFloat(item.rate);
         for (let i = 0; i < 5; i++) {
           let s = document.createElement("span");
           if (x > 0.5) {
@@ -79,12 +91,10 @@ const view = function (link) {
             s.className = "fa fa-star";
           }
           x--;
-          console.log(x);
           add(art, s);
         }
         add(art, watched);
         add(art, price);
-        console.log(art);
         let car = document.createElement("div");
         car.className = "";
         add(cur, art);

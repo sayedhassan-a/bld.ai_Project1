@@ -87,77 +87,168 @@
           </p>
         </div>
         <list class="pers-courses-select">
-          <ul>
+          <li>
             <button
+              id="python"
               class="pers-course-type"
               name="course type"
-              id="python"
-              onclick="getElementById('python').style.opacity = '100%'"
+              onclick="view('python')"
             >
               Python
             </button>
-          </ul>
-          <ul>
+          </li>
+          <li>
             <button
+              id="excel"
               class="pers-course-type"
               name="course type"
-              id="excel"
-              onclick="getElementById('excel').style.opacity = '100%'"
+              onclick="view('excel')"
             >
               Excel
             </button>
-          </ul>
-          <ul>
-            <button class="pers-course-type" name="course type">
+          </li>
+          <li>
+            <button
+              id="web"
+              class="pers-course-type"
+              name="course type"
+              onclick="view('web')"
+            >
               Web Development
             </button>
-          </ul>
-          <ul>
-            <button class="pers-course-type" name="course type">
+          </li>
+          <li>
+            <button
+              id="js"
+              class="pers-course-type"
+              name="course type"
+              onclick="view('js')"
+            >
               javaScript
             </button>
-          </ul>
-          <ul>
-            <button class="pers-course-type" name="course type">
+          </li>
+          <li>
+            <button
+              id="ds"
+              class="pers-course-type"
+              name="course type"
+              onclick="view('ds')"
+            >
               Data Science
             </button>
-          </ul>
-          <ul>
-            <button class="pers-course-type" name="course type">
+          </li>
+          <li>
+            <button
+              id="aws"
+              class="pers-course-type"
+              name="course type"
+              onclick="view('aws')"
+            >
               AWS Certification
             </button>
-          </ul>
-          <ul>
-            <button class="pers-course-type" name="course type">Drawing</button>
-          </ul>
+          </li>
+          <li>
+            <button
+              id="draw"
+              class="pers-course-type"
+              name="course type"
+              onclick="view('draw')"
+            >
+              Drawing
+            </button>
+          </li>
         </list>
         <div class="pers-courses">
           <div class="pers-courses-desc"></div>
-          <div id="disp" class="pers-courses-display">
-
-          </div>
-            
+          <div id="disp" class="pers-courses-display"></div>
         </div>
-        <section class="categories">
-          <div class="row">Top categories</div>
-          <div class="row">
-            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-design-v2.jpg" alt=""><figcaption>Desgin</figcaption></figure></div>
-            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-development-v2.jpg" alt=""><figcaption>Development</figcaption></figure></div>
-            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-marketing-v2.jpg" alt=""><figcaption>Marketing</figcaption></figure></div>
-            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-it-and-software-v2.jpg" alt=""><figcaption>IT and Software</figcaption></figure></div>
-            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-personal-development-v2.jpg" alt=""><figcaption>Personal Development</figcaption></figure></div>
-            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-business-v2.jpg" alt=""><figcaption>Business</figcaption></figure></div>
-            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-photography-v2.jpg" alt=""><figcaption>Photography</figcaption></figure></div>
-            <div class="col-md-4 col-lg-3"><figure><img src="https://s.udemycdn.com/home/top-categories/lohp-category-music-v2.jpg" alt=""><figcaption>Music</figcaption></figure></div>
+      </section>
+      <section class="categories">
+        <div class="row categories-head">Top categories</div>
+        <div class="row">
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img
+                src="https://s.udemycdn.com/home/top-categories/lohp-category-design-v2.jpg"
+                alt=""
+              />
+              <figcaption>Desgin</figcaption>
+            </figure>
           </div>
-        </section>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img
+                src="https://s.udemycdn.com/home/top-categories/lohp-category-development-v2.jpg"
+                alt=""
+              />
+              <figcaption>Development</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img
+                src="https://s.udemycdn.com/home/top-categories/lohp-category-marketing-v2.jpg"
+                alt=""
+              />
+              <figcaption>Marketing</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img
+                src="https://s.udemycdn.com/home/top-categories/lohp-category-it-and-software-v2.jpg"
+                alt=""
+              />
+              <figcaption>IT and Software</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img
+                src="https://s.udemycdn.com/home/top-categories/lohp-category-personal-development-v2.jpg"
+                alt=""
+              />
+              <figcaption>Personal Development</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img
+                src="https://s.udemycdn.com/home/top-categories/lohp-category-business-v2.jpg"
+                alt=""
+              />
+              <figcaption>Business</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img
+                src="https://s.udemycdn.com/home/top-categories/lohp-category-photography-v2.jpg"
+                alt=""
+              />
+              <figcaption>Photography</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img
+                src="https://s.udemycdn.com/home/top-categories/lohp-category-music-v2.jpg"
+                alt=""
+              />
+              <figcaption>Music</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
     </main>
     <footer></footer>
-    <script>view()</script>
+    <script>
+      view("python");
+    </script>
     <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUliZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
   </body>
