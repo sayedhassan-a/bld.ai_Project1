@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,12 +21,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <!-- CSS only -->
 
     <script src="myScript.js"></script>
   </head>
 
   <body>
+    <script>
+      view();
+    </script>
     <nav class="pers-nav">
       <span class="fa fa-bars" id="bar"></span>
       <span class="pers-navitem pers-site"><strong>Udemy</strong></span>
@@ -86,81 +89,143 @@
             published every month
           </p>
         </div>
-        <list class="pers-courses-select">
-          <li>
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button
-              id="python"
-              class="pers-course-type"
-              name="course type"
-              onclick="view('python')"
+              class="nav-link active"
+              id="nav-python-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#python"
+              type="button"
+              role="tab"
+              aria-controls="python"
+              aria-selected="true"
             >
               Python
             </button>
-          </li>
-          <li>
             <button
-              id="excel"
-              class="pers-course-type"
-              name="course type"
-              onclick="view('excel')"
+              class="nav-link"
+              id="nav-excel-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#excel"
+              type="button"
+              role="tab"
+              aria-controls="excel"
+              aria-selected="false"
             >
               Excel
             </button>
-          </li>
-          <li>
             <button
-              id="web"
-              class="pers-course-type"
-              name="course type"
-              onclick="view('web')"
+              class="nav-link"
+              id="nav-web-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#web"
+              type="button"
+              role="tab"
+              aria-controls="web"
+              aria-selected="false"
             >
               Web Development
             </button>
-          </li>
-          <li>
             <button
-              id="js"
-              class="pers-course-type"
-              name="course type"
-              onclick="view('js')"
+              class="nav-link"
+              id="nav-js-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#js"
+              type="button"
+              role="tab"
+              aria-controls="js"
+              aria-selected="true"
             >
-              javaScript
+              JavaScript
             </button>
-          </li>
-          <li>
             <button
-              id="ds"
-              class="pers-course-type"
-              name="course type"
-              onclick="view('ds')"
+              class="nav-link"
+              id="nav-ds-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#ds"
+              type="button"
+              role="tab"
+              aria-controls="ds"
+              aria-selected="false"
             >
-              Data Science
-            </button>
-          </li>
-          <li>
-            <button
-              id="aws"
-              class="pers-course-type"
-              name="course type"
-              onclick="view('aws')"
+              Data Science</button
+            ><button
+              class="nav-link"
+              id="nav-aws-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#aws"
+              type="button"
+              role="tab"
+              aria-controls="aws"
+              aria-selected="true"
             >
               AWS Certification
             </button>
-          </li>
-          <li>
             <button
-              id="draw"
-              class="pers-course-type"
-              name="course type"
-              onclick="view('draw')"
+              class="nav-link"
+              id="nav-draw-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#draw"
+              type="button"
+              role="tab"
+              aria-controls="draw"
+              aria-selected="false"
             >
               Drawing
             </button>
-          </li>
-        </list>
-        <div class="pers-courses">
-          <div class="pers-courses-desc"></div>
-          <div id="disp" class="pers-courses-display"></div>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active pers-courses"
+            id="python"
+            role="tabpanel"
+            aria-labelledby="nav-python-tab"
+            tabindex="0"
+          ></div>
+          <div
+            class="tab-pane fade pers-courses"
+            id="excel"
+            role="tabpanel"
+            aria-labelledby="nav-excel-tab"
+            tabindex="0"
+          ></div>
+          <div
+            class="tab-pane fade pers-courses"
+            id="web"
+            role="tabpanel"
+            aria-labelledby="nav-web-tab"
+            tabindex="0"
+          ></div>
+          <div
+            class="tab-pane fade pers-courses"
+            id="js"
+            role="tabpanel"
+            aria-labelledby="nav-js-tab"
+            tabindex="0"
+          ></div>
+          <div
+            class="tab-pane fade pers-courses"
+            id="ds"
+            role="tabpanel"
+            aria-labelledby="nav-ds-tab"
+            tabindex="0"
+          ></div>
+          <div
+            class="tab-pane fade pers-courses"
+            id="aws"
+            role="tabpanel"
+            aria-labelledby="nav-aws-tab"
+            tabindex="0"
+          ></div>
+          <div
+            class="tab-pane fade pers-courses"
+            id="draw"
+            role="tabpanel"
+            aria-labelledby="nav-draw-tab"
+            tabindex="0"
+          ></div>
         </div>
       </section>
       <section class="categories">
@@ -168,73 +233,49 @@
         <div class="row">
           <div class="col-md-4 col-lg-3">
             <figure>
-              <img
-                src="https://s.udemycdn.com/home/top-categories/lohp-category-design-v2.jpg"
-                alt=""
-              />
+              <img src="files/s1.jpg" alt="" />
               <figcaption>Desgin</figcaption>
             </figure>
           </div>
           <div class="col-md-4 col-lg-3">
             <figure>
-              <img
-                src="https://s.udemycdn.com/home/top-categories/lohp-category-development-v2.jpg"
-                alt=""
-              />
+              <img src="files/s2.jpg" alt="" />
               <figcaption>Development</figcaption>
             </figure>
           </div>
           <div class="col-md-4 col-lg-3">
             <figure>
-              <img
-                src="https://s.udemycdn.com/home/top-categories/lohp-category-marketing-v2.jpg"
-                alt=""
-              />
+              <img src="files/s3.jpg" alt="" />
               <figcaption>Marketing</figcaption>
             </figure>
           </div>
           <div class="col-md-4 col-lg-3">
             <figure>
-              <img
-                src="https://s.udemycdn.com/home/top-categories/lohp-category-it-and-software-v2.jpg"
-                alt=""
-              />
+              <img src="files/s4.jpg" alt="" />
               <figcaption>IT and Software</figcaption>
             </figure>
           </div>
           <div class="col-md-4 col-lg-3">
             <figure>
-              <img
-                src="https://s.udemycdn.com/home/top-categories/lohp-category-personal-development-v2.jpg"
-                alt=""
-              />
+              <img src="files/s5.jpg" alt="" />
               <figcaption>Personal Development</figcaption>
             </figure>
           </div>
           <div class="col-md-4 col-lg-3">
             <figure>
-              <img
-                src="https://s.udemycdn.com/home/top-categories/lohp-category-business-v2.jpg"
-                alt=""
-              />
+              <img src="files/s6.jpg" alt="" />
               <figcaption>Business</figcaption>
             </figure>
           </div>
           <div class="col-md-4 col-lg-3">
             <figure>
-              <img
-                src="https://s.udemycdn.com/home/top-categories/lohp-category-photography-v2.jpg"
-                alt=""
-              />
+              <img src="files/s7.jpg" alt="" />
               <figcaption>Photography</figcaption>
             </figure>
           </div>
           <div class="col-md-4 col-lg-3">
             <figure>
-              <img
-                src="https://s.udemycdn.com/home/top-categories/lohp-category-music-v2.jpg"
-                alt=""
-              />
+              <img src="files/s8.jpg" alt="" />
               <figcaption>Music</figcaption>
             </figure>
           </div>
@@ -242,13 +283,11 @@
       </section>
     </main>
     <footer></footer>
-    <script>
-      view("python");
-    </script>
+
     <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUliZ9AsSv4jD4Xa"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
   </body>
