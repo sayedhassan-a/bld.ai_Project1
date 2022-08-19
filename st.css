@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-.nav {
+.pers-nav {
   display: flex;
   font-family: sans-serif;
   font-size: 15px;
@@ -17,7 +17,7 @@ body {
   z-index: 2;
 }
 
-.last {
+.pers-last {
   display: flex;
   font-family: sans-serif;
   font-size: 15px;
@@ -29,37 +29,39 @@ body {
   padding: 20px 10px 20px 0;
   gap: 8px;
 }
-.log {
+.pers-log {
   color: black;
   font-weight: bold;
-  background-color: whitesmoke(0, 0, 0, 0.489);
+  background-color: whitesmoke(0, 0, 0, 0pers-489);
   border: 1px solid black;
-  padding: 10px 10px 10px 15px;
-  width: 50px;
+  padding: 10px 20px 10px 20px;
+  width: auto;
 }
 
-.sign {
+.pers-sign {
   color: white;
   font-weight: bold;
   background-color: black;
   border: 1px solid black;
-  padding: 10px 10px;
-  width: 55px;
+  padding: 10px 15px 10px 15px;
+  width: auto;
 }
 
-span.site {
+span.pers-site {
   font-size: 30px;
 }
 
-.bar {
+.pers-bar {
   float: right;
   background-color: transparent;
   border: none;
   width: calc(100% - 70px);
   height: inherit;
+  outline: none;
+  box-sizing: border-box;
 }
 
-.sbutton {
+.pers-sbutton {
   background-color: transparent;
   border-radius: 50px;
   border-bottom-right-radius: 0px;
@@ -71,7 +73,7 @@ span.site {
 form {
   width: 46%;
 }
-.form {
+.pers-form {
   display: flex;
   font-family: sans-serif;
   font-size: 15px;
@@ -86,25 +88,23 @@ form {
   height: 50px;
 }
 
-.lang {
+.pers-lang {
   border: solid black 1px;
-  align-items: center;
   vertical-align: middle;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
 }
-.alarm {
+.pers-alarm {
   display: inline-block;
   margin: auto;
   margin-top: 3px;
   width: 100%;
 }
-.alarm img {
+.pers-alarm img {
   width: 100%;
 }
-.header,
-.header2 {
+.pers-header,
+.pers-header2 {
   position: absolute;
-
   width: 350px;
   z-index: 1;
   margin-left: 10%;
@@ -115,119 +115,215 @@ form {
   box-shadow: 1px 1px 2px 2px gainsboro;
 }
 
-.header2 {
+.pers-header2 {
   width: 80%;
   margin: auto;
   position: static;
   display: none;
 }
-.header h1 {
+.pers-header h1 {
   font-size: 35px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-.header p {
+.pers-header p {
   font-size: 20px;
-  font-family: serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-.intro {
+.pers-intro {
   width: 100%;
   max-width: 1000px;
 }
-.intro h1 {
+.pers-intro h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 0 auto;
   font-size: 30px;
 }
-.intro p {
+.pers-intro p {
   font-family: sans-serif;
   font-size: 20px;
 }
 
-.courses-display {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-  padding: 0px 10px 20px 0px;
+.tab-content {
+  margin-top: 8px;
 }
-.courses {
+.pers-courses {
   border: 1px solid black;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  margin: auto;
 }
-.courses-desc {
+
+.carousel-item {
+  height: 350px;
+  justify-content: center;
+}
+
+.pers-courses-desc {
   padding: 0px 20px;
   font-family: sans-serif;
 }
-.courses-desc p {
+.pers-courses-desc p {
   font-size: 15px;
 }
-.course-item {
+.pers-course-item {
   width: 100%;
   max-width: 250px;
+  height: 300px;
+  padding: 5px;
 }
-
-.course-item h3,
-.course-item p,
-.course-item img {
+.pers-heading {
+  font: unset;
+  font-size: 15px;
+  font-weight: bold;
+}
+.pers-course-item h3,
+.pers-course-item p,
+.pers-course-item img {
   width: inherit;
   margin: 0;
 }
 
-.courses-display::after {
+.pers-courses-display:after {
   content: "";
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
 }
-.rate {
+
+.pers-rate {
   color: goldenrod;
 }
-.rate-num {
+.pers-rate-num {
   color: brown;
   font-weight: bold;
 }
 
-.courses-section {
-  width: 90%;
-  padding: 35px 5%;
-  margin: 0;
+.pers-courses-section {
+  width: 85%;
+  margin: auto;
+  padding-bottom: 50px;
 }
 
-.courses-select ul {
+.pers-courses-select li {
   display: inline;
   margin: 0;
   padding: 0;
+  outline: none;
 }
-.course-type {
+.pers-course-type {
   margin: 8px auto;
   background-color: transparent;
   border: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   font-family: sans-serif;
   opacity: 60%;
 }
-.price {
+.pers-price {
   font-weight: bold;
 }
 #bar {
   display: none;
 }
+
+.categories {
+  width: 85%;
+  margin: auto;
+  padding: auto;
+}
+.row {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 18px;
+}
+.categories-head {
+  box-sizing: border-box;
+  padding: 12px;
+}
+.row img {
+  width: 100%;
+  background-color: #f7f9fa;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.row img:hover {
+  padding: 0px;
+}
+figcaption {
+  font-size: 1rem;
+}
+.nav,
+.nav-tabs,
+.nav-link {
+  border: none;
+  outline: none;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.nav-link {
+  opacity: 0.5;
+  margin: 0;
+}
+.nav-link:hover {
+  color: unset;
+  border: none;
+  opacity: 1;
+}
+.nav-link.active {
+  color: black;
+  opacity: 1;
+  border: none;
+  outline: none;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: flex;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  border: black solid;
+  background-color: black;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  bottom: 100px;
+}
+
+.carousel-control-next-icon {
+  left: 20px;
+}
+
+.carousel-control-prev-icon {
+  right: 20px;
+}
 @media only screen and (max-width: 1500px) {
-  .bus {
+  .pers-bus {
     display: none;
   }
 }
 @media only screen and (max-width: 1200px) {
-  .teach {
+  .pers-teach {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .carousel-item > article:last-child {
     display: none;
   }
 }
 @media only screen and (max-width: 1000px) {
-  .navitem {
+  .pers-navitem {
     display: none;
   }
-  .site,
+  .pers-site,
   #bar {
     display: inline;
     margin: 0;
@@ -237,20 +333,36 @@ form {
     position: relative;
     top: 7px;
   }
-  .site {
+  .pers-site {
     float: right;
   }
-  .nav {
+  .pers-nav {
     display: inline-block;
-    width: 90%;
+    width: 100%;
     padding: 20px 5% 0px 5%;
   }
 }
+
 @media only screen and (max-width: 850px) {
-  .header {
+  .pers-header {
     display: none;
   }
-  .header2 {
+  .pers-header2 {
     display: block;
+    margin-bottom: 20px;
+  }
+  .carousel-item > article:nth-child(4) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel-item > article:nth-child(3) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .carousel-item > article:nth-child(2) {
+    display: none;
   }
 }

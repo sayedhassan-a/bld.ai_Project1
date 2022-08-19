@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="st.css" />
     <link
       rel="stylesheet"
@@ -14,46 +21,58 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
+    <script src="myScript.js"></script>
   </head>
 
   <body>
-    <nav class="nav">
+    <script>
+      view();
+    </script>
+    <nav class="pers-nav">
       <span class="fa fa-bars" id="bar"></span>
-      <span class="navitem site"><strong>Udemy</strong></span>
-      <span class="navitem cat">Categories</span>
+      <span class="pers-navitem pers-site"><strong>Udemy</strong></span>
+      <span class="pers-navitem pers-cat">Categories</span>
       <!--Search Bar-->
-      <form class="navitem form">
-        <button type="submit" class="sbutton">
+      <form class="pers-navitem pers-form" onsubmit="{upd()}">
+        <button type="submit" class="pers-sbutton">
           <i class="material-icons">search</i>
         </button>
-        <input type="text" class="bar" placeholder="Search for anything" />
+        <input
+          type="text"
+          class="pers-bar"
+          placeholder="Search for anything"
+          id="search-item"
+        />
       </form>
 
-      <span class="navitem bus">Udemy Business</span>
-      <span class="navitem teach">Teach on Udemy</span>
+      <span class="pers-navitem pers-bus">Udemy Business</span>
+      <span class="pers-navitem pers-teach">Teach on Udemy</span>
       <!--cart-->
-      <span class="navitem cart">
+      <span class="pers-navitem pers-cart">
         <i class="material-icons">shopping_cart</i>
       </span>
-      <div class="last">
-        <span class="navitem log">Log in</span>
-        <span class="navitem sign">Sign up</span>
-        <span class="navitem lang"><i class="material-icons">language</i></span>
+      <div class="pers-last">
+        <span class="pers-navitem pers-log">Log in</span>
+        <span class="pers-navitem pers-sign">Sign up</span>
+        <span class="pers-navitem pers-lang"
+          ><i class="material-icons">language</i></span
+        >
       </div>
       <!--Lang-->
     </nav>
     <header>
-      <div class="header">
+      <div class="pers-header">
         <h1>New to Udemy? Lucky you.</h1>
         <p>
           Courses start at E£169.99. Get your new-student offer before it
           expires.
         </p>
       </div>
-      <div class="alarm">
+      <div class="pers-alarm">
         <img src="files/alarm.jpg" />
       </div>
-      <div class="header2">
+      <div class="pers-header2">
         <h1>New to Udemy? Lucky you.</h1>
         <p>
           Courses start at E£169.99. Get your new-student offer before it
@@ -62,145 +81,435 @@
       </div>
     </header>
     <main>
-      <section class="courses-section">
-        <div class="intro">
+      <section class="pers-courses-section">
+        <div class="pers-intro">
           <h1>A broad selection of courses</h1>
           <p>
             Choose from 185,000 online video courses with new additions
             published every month
           </p>
         </div>
-        <list class="courses-select">
-          <ul>
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button
-              class="course-type"
-              name="course type"
-              id="python"
-              onclick="getElementById('python').style.opacity = '100%'"
+              class="nav-link active"
+              id="nav-python-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#python"
+              type="button"
+              role="tab"
+              aria-controls="python"
+              aria-selected="true"
             >
               Python
             </button>
-          </ul>
-          <ul>
             <button
-              class="course-type"
-              name="course type"
-              id="excel"
-              onclick="getElementById('excel').style.opacity = '100%'"
+              class="nav-link"
+              id="nav-excel-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#excel"
+              type="button"
+              role="tab"
+              aria-controls="excel"
+              aria-selected="false"
             >
               Excel
             </button>
-          </ul>
-          <ul>
-            <button class="course-type" name="course type">
+            <button
+              class="nav-link"
+              id="nav-web-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#web"
+              type="button"
+              role="tab"
+              aria-controls="web"
+              aria-selected="false"
+            >
               Web Development
             </button>
-          </ul>
-          <ul>
-            <button class="course-type" name="course type">javaScript</button>
-          </ul>
-          <ul>
-            <button class="course-type" name="course type">Data Science</button>
-          </ul>
-          <ul>
-            <button class="course-type" name="course type">
+            <button
+              class="nav-link"
+              id="nav-js-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#js"
+              type="button"
+              role="tab"
+              aria-controls="js"
+              aria-selected="true"
+            >
+              JavaScript
+            </button>
+            <button
+              class="nav-link"
+              id="nav-ds-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#ds"
+              type="button"
+              role="tab"
+              aria-controls="ds"
+              aria-selected="false"
+            >
+              Data Science</button
+            ><button
+              class="nav-link"
+              id="nav-aws-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#aws"
+              type="button"
+              role="tab"
+              aria-controls="aws"
+              aria-selected="true"
+            >
               AWS Certification
             </button>
-          </ul>
-          <ul>
-            <button class="course-type" name="course type">Drawing</button>
-          </ul>
-        </list>
-        <div class="courses">
-          <div class="courses-desc">
-            <h2>Expand your career opportunities with Python</h2>
-            <p>
-              Take one of Udemy’s range of Python courses and learn how to code
-              using this incredibly useful language. Its simple syntax and
-              readability makes Python perfect for Flask, Django, data science,
-              and machine learning. You’ll learn how to build everything from
-              games to sites to apps. Choose from a range of courses that will
-              appeal to both beginners and advanced developers alike.
-            </p>
+            <button
+              class="nav-link"
+              id="nav-draw-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#draw"
+              type="button"
+              role="tab"
+              aria-controls="draw"
+              aria-selected="false"
+            >
+              Drawing
+            </button>
           </div>
-          <div class="courses-display">
-            <article class="course-item">
-              <img src="files/c1.png" class="course" />
-              <h3 class="heading">
-                Learn Python: The Complete Python Programming Course
-              </h3>
-              <p class="author">Avinash Jain, The Codex</p>
-              <span class="rate rate-num">4.4</span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star-half-empty rate"></span>
-              <span class="watched">(2,923)</span>
-              <p class="price">E£199.99 <s>E£679.99</s></p>
-            </article>
-            <article class="course-item">
-              <img src="files/c2.png" class="course" />
-              <h3 class="heading">
-                Learning Python for Data Analysis and Visualization
-              </h3>
-              <p class="author">Jose Portilla</p>
-              <span class="rate rate-num">4.4</span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star-half-empty rate"></span>
-              <span class="watched">(17,986)</span>
-              <p class="price">E£269.99 <s>E£1599.99</s></p>
-            </article>
-            <article class="course-item">
-              <img src="files/c3.png" class="course" />
-              <h3 class="heading">
-                Python for Beginners - Learn Programming from scratch
-              </h3>
-              <p class="author">Edwin Diaz, Coding Faculty Solutions</p>
-              <span class="rate rate-num">4.4</span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star-half-empty rate"></span>
-              <span class="watched">(1,770)</span>
-              <p class="price">E£199.99 <s>E£679.99</s></p>
-            </article>
-            <article class="course-item">
-              <img src="files/c4.png" class="course" />
-              <h3 class="heading">Learn Python: Python for Beginners</h3>
-              <p class="author">Abrar Hussain</p>
-              <span class="rate rate-num">4.3</span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star-half-empty rate"></span>
-              <span class="watched">(2,768)</span>
-              <p class="price">E£199.99 <s>E£319.99</s></p>
-            </article>
-            <article class="course-item">
-              <img src="files/c5.png" class="course" />
-              <h3 class="heading">
-                Python Beyond the Basics - Object-Oriented Programming
-              </h3>
-              <p class="author">Infinite Skills</p>
-              <span class="rate rate-num">4.4</span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star rate"></span>
-              <span class="fa fa-star-half-empty rate"></span>
-              <span class="watched">(2,929)</span>
-              <p class="price">E£229.99 <s>E£519.99</s></p>
-            </article>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active pers-courses"
+            id="python"
+            role="tabpanel"
+            aria-labelledby="nav-python-tab"
+            tabindex="0"
+          >
+            <div
+              id="carouselPython"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div
+                class="carousel-inner"
+                role="listbox"
+                id="inner-python"
+              ></div>
+              <button
+                class="carousel-control-prev w-aut"
+                type="button"
+                data-bs-target="#carouselPython"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next w-aut"
+                type="button"
+                data-bs-target="#carouselPython"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade pers-courses"
+            id="excel"
+            role="tabpanel"
+            aria-labelledby="nav-excel-tab"
+            tabindex="0"
+          >
+            <div
+              id="carouselExcel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner" role="listbox" id="inner-excel"></div>
+              <button
+                class="carousel-control-prev w-aut"
+                type="button"
+                data-bs-target="#carouselExcel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next w-aut"
+                type="button"
+                data-bs-target="#carouselExcel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade pers-courses"
+            id="web"
+            role="tabpanel"
+            aria-labelledby="nav-web-tab"
+            tabindex="0"
+          >
+            <div
+              id="carouselWeb"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner" role="listbox" id="inner-web"></div>
+              <button
+                class="carousel-control-prev w-aut"
+                type="button"
+                data-bs-target="#carouselWeb"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next w-aut"
+                type="button"
+                data-bs-target="#carouselWeb"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade pers-courses"
+            id="js"
+            role="tabpanel"
+            aria-labelledby="nav-js-tab"
+            tabindex="0"
+          >
+            <div id="carouselJs" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner" role="listbox" id="inner-js"></div>
+              <button
+                class="carousel-control-prev w-aut"
+                type="button"
+                data-bs-target="#carouselJs"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next w-aut"
+                type="button"
+                data-bs-target="#carouselJs"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade pers-courses"
+            id="ds"
+            role="tabpanel"
+            aria-labelledby="nav-ds-tab"
+            tabindex="0"
+          >
+            <div id="carouselDs" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner" role="listbox" id="inner-ds"></div>
+              <button
+                class="carousel-control-prev w-aut"
+                type="button"
+                data-bs-target="#carouselDs"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next w-aut"
+                type="button"
+                data-bs-target="#carouselDs"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade pers-courses"
+            id="aws"
+            role="tabpanel"
+            aria-labelledby="nav-aws-tab"
+            tabindex="0"
+          >
+            <div
+              id="carouselAws"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner" role="listbox" id="inner-aws"></div>
+              <button
+                class="carousel-control-prev w-aut"
+                type="button"
+                data-bs-target="#carouselAws"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next w-aut"
+                type="button"
+                data-bs-target="#carouselAws"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade pers-courses"
+            id="draw"
+            role="tabpanel"
+            aria-labelledby="nav-draw-tab"
+            tabindex="0"
+          >
+            <div
+              id="carouselDraw"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner" role="listbox" id="inner-draw"></div>
+              <button
+                class="carousel-control-prev w-aut"
+                type="button"
+                data-bs-target="#carouselDraw"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next w-aut"
+                type="button"
+                data-bs-target="#carouselDraw"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="categories">
+        <div class="row categories-head">Top categories</div>
+        <div class="row">
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img src="files/s1.jpg" alt="" />
+              <figcaption>Desgin</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img src="files/s2.jpg" alt="" />
+              <figcaption>Development</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img src="files/s3.jpg" alt="" />
+              <figcaption>Marketing</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img src="files/s4.jpg" alt="" />
+              <figcaption>IT and Software</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img src="files/s5.jpg" alt="" />
+              <figcaption>Personal Development</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img src="files/s6.jpg" alt="" />
+              <figcaption>Business</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img src="files/s7.jpg" alt="" />
+              <figcaption>Photography</figcaption>
+            </figure>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <figure>
+              <img src="files/s8.jpg" alt="" />
+              <figcaption>Music</figcaption>
+            </figure>
           </div>
         </div>
       </section>
     </main>
     <footer></footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
