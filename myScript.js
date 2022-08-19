@@ -32,9 +32,9 @@ const view = function () {
         cur = document.createElement("div");
         cur.className = "pers-courses-display";
         cur.id = "disp";
-        add(el, desc);
-        add(el, cur);
-
+        el.prepend(desc);
+        el = document.getElementById("inner-" + keys[i]);
+        console.log("inner-" + keys[i]);
         console.log(el);
         let title = document.createElement("h2");
         let header = document.createElement("p");
@@ -42,56 +42,61 @@ const view = function () {
         header.innerHTML = data[keys[i]].header;
         add(desc, title);
         add(desc, header);
-        for (let j of data[keys[i]].courses) {
-          let item = j;
-          let art = document.createElement("article");
-          let img = document.createElement("img");
-          let heading = document.createElement("h3");
-          let author = document.createElement("p");
-          let rate = document.createElement("span");
-          let watched = document.createElement("span");
-          let price = document.createElement("p");
-          let final = document.createElement("s");
+        let ch = 0;
+        for (let j in data[keys[i]].courses) {
+          let div = document.createElement("div");
+          if (!ch) div.className = "carousel-item active";
+          else div.className = "carousel-item";
+          ch++;
+          for (let k = 0; k < 5; k++) {
+            let id = parseInt(k) + parseInt(j);
+            id %= data[keys[i]].courses.length;
+            let art = document.createElement("article");
+            art.className = "pers-course-item";
+            let item = data[keys[i]].courses[id];
+            let img = document.createElement("img");
+            let heading = document.createElement("h3");
+            let author = document.createElement("p");
+            let rate = document.createElement("span");
+            let watched = document.createElement("span");
+            let price = document.createElement("p");
+            img.className = "pers-course";
+            heading.className = "pers-heading";
+            author.className = "pers-author";
+            rate.className = "pers-rate pers-rate-num";
+            watched.className = "pers-watched";
+            price.className = "pers-price";
 
-          art.className = "pers-course-item";
-          img.className = "pers-course";
-          heading.className = "pers-heading";
-          author.className = "pers-author";
-          rate.className = "pers-rate pers-rate-num";
-          watched.className = "pers-watched";
-          price.className = "pers-price";
-
-          img.src = item.image;
-          heading.innerHTML = item.headline;
-          author.innerHTML = item.instructors[0].name;
-          let x = parseFloat(item.rating);
-          x = x.toFixed(1);
-          let y = parseFloat(x).toFixed();
-          if (y == x) x = x.toFixed();
-          rate.innerHTML = x;
-          price.innerHTML = "E£" + item.price + "  ";
-
-          add(art, img);
-          add(art, heading);
-          add(art, author);
-          add(art, rate);
-          for (let i = 0; i < 5; i++) {
-            let s = document.createElement("span");
-            if (x > 0.5) {
-              s.className = "fa fa-star pers-rate";
-            } else if (x > 0) {
-              s.className = "fa fa-star-half-empty pers-rate";
-            } else {
-              s.className = "fa fa-star";
+            img.src = item.image;
+            heading.innerHTML = item.headline;
+            author.innerHTML = item.instructors[0].name;
+            let x = parseFloat(item.rating);
+            x = x.toFixed(1);
+            let y = parseFloat(x).toFixed();
+            if (y == x) x = x.toFixed();
+            rate.innerHTML = x;
+            price.innerHTML = "E£" + item.price + "  ";
+            add(art, img);
+            add(art, heading);
+            add(art, author);
+            add(art, rate);
+            for (let l = 0; l < 5; l++) {
+              let s = document.createElement("span");
+              if (x > 0.5) {
+                s.className = "fa fa-star pers-rate";
+              } else if (x > 0) {
+                s.className = "fa fa-star-half-empty pers-rate";
+              } else {
+                s.className = "fa fa-star";
+              }
+              x--;
+              add(art, s);
             }
-            x--;
-            add(art, s);
+            add(art, watched);
+            add(art, price);
+            add(div, art);
+            add(el, div);
           }
-          add(art, watched);
-          add(art, price);
-          let car = document.createElement("div");
-          car.className = "";
-          add(cur, art);
         }
       }
     });
